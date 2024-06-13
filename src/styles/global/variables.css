@@ -1,0 +1,92 @@
+:root {
+	--red-0: #FF4D5B;
+	--red-1: #B23640;
+	--red-2: #661F25;
+
+	--orange-0: #FF974D;
+	--orange-1: #B26A36;
+	--orange-2: #663C1F;
+
+	--yellow-0: #FED24C;
+	--yellow-1: #B29336;
+	--yellow-2: #66541F;
+
+	--green-0: #4DFF8B;
+	--green-1: #36B261;
+	--green-2: #1F6638;
+
+	--cyan-0: #4DFFE1;
+	--cyan-1: #36B29E;
+	--cyan-2: #1F665A;
+
+	--light-blue-0: #4CDFFF;
+	--light-blue-1: #369CB2;
+	--light-blue-2: #1F5966;
+
+	--blue-0: #4D9CFF;
+	--blue-1: #366DB2;
+	--blue-2: #1F3E66;
+
+	--purple-0: #974DFF;
+	--purple-1: #6A36B2;
+	--purple-2: #3C1F66;
+
+	--pink-0: #FF4DFF;
+	--pink-1: #B236B2;
+	--pink-2: #661F66;
+
+	--white-0: #E5F2FF;
+	--white-1: #A0A9B2;
+	--white-2: #5C6166;
+	--white-3: #393C40;
+	--white-4: #222426;
+
+	--black-0: #29343F;
+	--black-1: #1E262E;
+	--black-2: #14191F;
+	--black-3: #0D1114;
+	--black-4: #080B0D;
+}
+
+:root {
+	--foreground-color-0: var(--white-0);
+	--foreground-color-1: var(--white-1);
+	--foreground-color-2: var(--white-2);
+
+	--background-color-0: var(--black-0);
+	--background-color-1: var(--black-1);
+	--background-color-2: var(--black-2);
+	--background-color-3: var(--black-3);
+	--background-color-4: var(--black-4);
+
+	--scrollbar-color: color-mix(in srgb, var(--background-color-0) 25%, transparent);
+}
+
+:root {
+	--border-radius-0: 0.2rem;
+	--border-radius-1: 0.375rem;
+	--border-radius-99: 9999px;
+
+	--svg-drop-shadow-color: var(--black-0);
+	--svg-drop-shadow-0: drop-shadow(0.1rem 0.1rem 0.2rem color-mix(in srgb, var(--svg-drop-shadow-color) 50%, transparent));
+	--svg-drop-shadow-1: drop-shadow(0.1rem 0.1rem 0.2rem color-mix(in srgb, var(--svg-drop-shadow-color) 75%, transparent));
+	
+	--window-shadow-size: 0.3rem;
+	--window-shadow-opacity: 35%;
+	--window-shadow-spread: 3;
+	--window-box-shadow: calc(var(--window-shadow-size) * -1) var(--window-shadow-size)
+		calc(var(--window-shadow-size) * var(--window-shadow-spread)) 0px
+		rgba(0, 0, 0, var(--window-shadow-opacity));
+
+	--taskbar-height: 3rem;
+	--taskbar-color: var(--background-color-2);
+	--taskbar-opacity: 0.75;
+	--taskbar-menu-color: var(--background-color-1);
+	--taskbar-menu-opacity: 0.5;
+	--taskbar-button-hover-color: rgba(255, 255, 255, 5%);
+	--taskbar-filter: blur(1rem);
+}
+
+@media screen and (max-width: 450px) {
+	/* Change --taskbar-height to 2.5rem using TS */
+}

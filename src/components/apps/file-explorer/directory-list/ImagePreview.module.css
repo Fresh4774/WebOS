@@ -1,0 +1,19 @@
+.ImagePreview {
+	height: 100%;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.ImagePreview > * {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.ImagePreview > img {
+	height: auto;
+	max-height: 100%;
+	width: auto;
+  	max-width: 100%;
+	border-radius: inherit;
+}

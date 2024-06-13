@@ -1,0 +1,65 @@
+@import "./global/variables.css";
+@import "./global/fonts.css";
+@import "./global/themes.css";
+@import "./global/scrollbar.css";
+
+html, body, #root {
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow: hidden;
+	background-color: var(--background-color-2);
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	font-family: var(--body-font-family);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, :after, :before {
+	color: var(--foreground-color-0);
+	font-size: 1rem;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizelegibility;
+}
+
+p, a, button, input, select, h1, h2, h3, h4, h5, h6 {
+	font-family: var(--body-font-family);
+	letter-spacing: normal;
+}
+
+p, a, div, span { font-size: 1em; }
+button, input { font-size: 0.875em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+
+button, li[data-rttab="true"] {
+	margin: 0;
+	border: none;
+	outline: none;
+	transition: background-color 100ms ease-in-out;
+	cursor: pointer;
+	user-select: none;
+}
+
+code {
+	font-family: var(--mono-font-family);
+}
+
+
+*::selection {
+	color: var(--background-color-3);
+	background-color: var(--foreground-color-0);
+}

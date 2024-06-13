@@ -1,0 +1,69 @@
+.SearchMenuContainer {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	bottom: 100%;
+	height: auto !important;
+	max-height: 20rem;
+	overflow: hidden;
+}
+
+.SearchMenu {
+	opacity: 1;
+	display: flex;
+	gap: 0.5rem;
+	flex-direction: column-reverse;
+	min-width: 13rem;
+	max-width: 19rem;
+	padding: 0.5rem;
+	border-top-left-radius: var(--border-radius-1);
+	border-top-right-radius: var(--border-radius-1);
+	border-bottom-right-radius: var(--border-radius-1);
+	backdrop-filter: var(--taskbar-filter);
+	transform: none;
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+	overflow: hidden;
+	resize: horizontal;
+}
+
+.SearchMenu::after {
+	opacity: var(--taskbar-menu-opacity);
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--taskbar-menu-color);
+	z-index: -2;
+}
+
+.SearchMenuContainer:not(.Active) {
+	pointer-events: none;
+}
+
+.SearchMenuContainer:not(.Active) .SearchMenu {
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+.SearchMenu > div {
+	margin-top: auto;
+}
+
+.Input {
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	color: var(--foreground-color-0);
+	background-color: rgba(0, 0, 0, 25%);
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.SearchMenu > div > button:first-child {
+	background-color: var(--taskbar-button-hover-color);
+}

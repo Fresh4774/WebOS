@@ -1,0 +1,47 @@
+.HomeMenuContainer {
+	right: unset;
+	left: 0;
+}
+
+.HomeMenu {
+	min-width: 16rem;
+	max-width: 32rem;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: var(--border-radius-1);
+}
+
+.Buttons {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	padding: 0.25rem;
+	margin-top: auto;
+	z-index: 1;
+}
+
+.Buttons > button {
+	padding: 0.5rem;
+	border-radius: var(--border-radius-1);
+}
+
+.Buttons > button > svg {
+	height: 1.5rem;
+}
+
+.Apps {
+	display: flex;
+	flex-direction: column;
+	width: 100% !important;
+	max-height: 20rem;
+	padding: 1rem;
+	padding-right: 0.25rem;
+	padding-bottom: 0;
+}
+
+.Apps > h1 {
+	width: 100%;
+	text-align: left;
+	font-size: 1rem;
+	margin: 0;
+	margin-bottom: 0.5rem;
+}

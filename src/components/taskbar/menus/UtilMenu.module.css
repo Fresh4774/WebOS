@@ -1,0 +1,41 @@
+.UtilMenuContainer {
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+	height: auto !important;
+	overflow: hidden;
+}
+
+.UtilMenu {
+	opacity: 1;
+	display: flex;
+	border-top-left-radius: var(--border-radius-1);
+	border-top-right-radius: var(--border-radius-1);
+	border-bottom-left-radius: var(--border-radius-1);
+	backdrop-filter: var(--taskbar-filter);
+	transform: none;
+	transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+	overflow: hidden;
+	resize: horizontal;
+}
+
+.UtilMenu::after {
+	opacity: var(--taskbar-menu-opacity);
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--taskbar-menu-color);
+	z-index: -2;
+}
+
+.UtilMenuContainer:not(.Active) {
+	pointer-events: none;
+}
+
+.UtilMenuContainer:not(.Active) .UtilMenu {
+	opacity: 0;
+	transform: translateY(100px);
+}

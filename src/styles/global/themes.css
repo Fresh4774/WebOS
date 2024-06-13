@@ -1,0 +1,67 @@
+.Light-theme {
+	--foreground-color-0: var(--black-3);
+	--foreground-color-1: var(--black-2);
+	--foreground-color-2: var(--black-1);
+
+	--background-color-0: var(--white-0);
+	--background-color-1: var(--white-0);
+	--background-color-2: var(--white-1);
+	--background-color-3: var(--white-1);
+	--background-color-4: var(--white-2);
+
+	--taskbar-color: var(--white-0);
+	--taskbar-menu-color: var(--white-0);
+	--taskbar-button-hover-color: rgba(0, 0, 0, 5%);
+}
+
+.Cherry-theme {
+	--background-color-0: var(--red-0);
+	--background-color-1: var(--red-0);
+	--background-color-2: var(--red-1);
+	--background-color-3: var(--red-1);
+	--background-color-4: var(--red-2);
+
+	--taskbar-color: var(--red-2);
+	--taskbar-menu-color: var(--red-1);
+}
+
+.Mango-theme {
+	--foreground-color-0: var(--black-3);
+	--foreground-color-1: var(--black-2);
+	--foreground-color-2: var(--black-1);
+
+	--background-color-0: var(--yellow-0);
+	--background-color-1: var(--yellow-0);
+	--background-color-2: var(--yellow-1);
+	--background-color-3: var(--yellow-1);
+	--background-color-4: var(--yellow-2);
+
+	--taskbar-color: var(--yellow-0);
+	--taskbar-menu-color: var(--yellow-0);
+}
+
+.Aqua-theme {
+	--foreground-color-0: var(--black-3);
+	--foreground-color-1: var(--black-2);
+	--foreground-color-2: var(--black-1);
+
+	--background-color-0: var(--cyan-0);
+	--background-color-1: var(--cyan-0);
+	--background-color-2: var(--cyan-1);
+	--background-color-3: var(--cyan-1);
+	--background-color-4: var(--cyan-2);
+
+	--taskbar-color: var(--cyan-0);
+	--taskbar-menu-color: var(--cyan-0);
+}
+
+.Grape-theme {
+	--background-color-0: var(--purple-0);
+	--background-color-1: var(--purple-0);
+	--background-color-2: var(--purple-1);
+	--background-color-3: var(--purple-1);
+	--background-color-4: var(--purple-2);
+
+	--taskbar-color: var(--purple-2);
+	--taskbar-menu-color: var(--purple-1);
+}

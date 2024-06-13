@@ -1,0 +1,152 @@
+.Window-container {
+	--header-height: 2.5rem;
+	--header-button-hover-color: rgba(255, 255, 255, 5%);
+
+	position: absolute;
+}
+
+.Window-container.Minimized {
+	pointer-events: none;
+}
+
+@keyframes pop-in {
+	0% {
+		scale: 0;
+	}
+	100% {
+		scale: 100%;
+	}
+}
+
+.Window-container.Maximized {
+	width: 100%;
+	height: 100%;
+	transform: none !important;
+}
+
+.Window-container.Maximized .Window-inner {
+	width: 100%;
+	height: calc(100% - var(--taskbar-height));
+	border-radius: 0;
+	resize: none;
+}
+
+.Window-inner {
+	display: flex;
+	flex-direction: column;
+	min-width: 300px;
+	min-height: 150px;
+	background-color: var(--background-color-2);
+	border-radius: var(--border-radius-1);
+	box-shadow: var(--window-box-shadow);
+	resize: both;
+	overflow: hidden;
+	transform-origin: center center;
+	animation: appear 250ms ease-in-out forwards;
+}
+
+.Window-container.Minimized .Window-inner {
+	animation: disappear 250ms ease-in-out forwards;
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		transform: translateY(25vh) scale(0);
+	}
+	25% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes disappear {
+	0% {
+		opacity: 1;
+		transform: none;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(25vh) scale(0);
+	}
+}
+
+.Header {
+	--window-icon-size: 1.5rem;
+	--window-icon-margin: 0.75rem;
+
+	display: flex;
+	align-items: center;
+	height: var(--header-height);
+	padding: 0.25rem;
+	padding-left: var(--window-icon-margin);
+	padding-right: 0;
+	background-color: var(--background-color-1);
+	cursor: grab;
+}
+
+.Window-icon,
+.Window-icon > div,
+.Window-icon > div > svg {
+	height: 100%;
+	width: auto;
+}
+
+.Window-icon {
+	height: var(--window-icon-size);
+	margin-right: calc(var(--window-icon-margin) - 0.1rem);
+}
+
+.Window-icon > div {
+	display: flex;
+	align-items: center;
+}
+
+.Header > p {
+	user-select: none;
+	width: auto;
+	margin: 0;
+	margin-right: auto;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.Header-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--header-height);
+	margin: 0;
+	padding: 0.75rem;
+	color: var(--foreground-color-0);
+	background: none;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	aspect-ratio: 1;
+}
+
+.Header-button > svg {
+	height: 100%;
+}
+
+.Exit-button {
+	--header-button-hover-color: var(--red-0);
+}
+
+.Header-button:hover, .Header-button:focus-visible {
+	background-color: var(--header-button-hover-color);
+}
+
+.Window-content {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}

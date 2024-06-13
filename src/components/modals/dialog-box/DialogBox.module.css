@@ -1,0 +1,27 @@
+.DialogContent {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.DialogContent button {
+	margin-bottom: 0.75rem;
+	padding: 0.5rem 1rem;
+	width: fit-content;
+	color: var(--foreground-color-0);
+	background-color: var(--background-color-0);
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	transition: background-color 100ms ease-in-out;
+	cursor: pointer;
+}
+
+.DialogContent button:hover, .DialogContent button:focus-visible {
+	background-color: var(--background-color-1);
+}

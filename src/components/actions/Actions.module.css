@@ -1,0 +1,235 @@
+.Actions {
+	/* These variables describe the position of the container relative to top left corner of its parent */
+	--left: 0;
+	--top: 0;
+	--right: calc(1 - var(--left));
+	--bottom: calc(1 - var(--top));
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	transition: opacity 100ms ease-out;
+}
+
+.Actions.Uninitiated {
+	opacity: 0;
+}
+
+.Actions.AlignLeft {
+	--left: 1;
+
+	left: unset;
+	right: 0;
+}
+
+.Actions.AlignTop {
+	--top: 1;
+
+	top: unset;
+	bottom: 0;
+}
+
+.ContextMenu.Actions {
+	--border-radius: var(--border-radius-1);
+	--padding: 0.375rem;
+
+	padding: var(--padding);
+	border-top-left-radius: calc((1 - var(--right) * var(--bottom)) * var(--border-radius)) !important;
+	border-top-right-radius: calc((1 - var(--left) * var(--bottom)) * var(--border-radius)) !important;
+	border-bottom-left-radius: calc((1 - var(--right) * var(--top)) * var(--border-radius)) !important;
+	border-bottom-right-radius: calc((1 - var(--left) * var(--top)) * var(--border-radius)) !important;
+	background-color: var(--background-color-1) !important;
+}
+
+.ContextMenu .Button,
+.ContextMenu .Dropdown {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	background: none;
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-size: 0.875rem;
+	text-align: start;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.ContextMenu .Button:hover,
+.ContextMenu .Button:focus-visible,
+.ContextMenu .Dropdown:hover,
+.ContextMenu .Dropdown:focus-visible {
+	background-color: color-mix(in srgb, var(--background-color-0) 75%, transparent);
+}
+
+.ContextMenu .Label {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.ContextMenu .Label p,
+.ContextMenu .Shortcut {
+	margin: 0;
+}
+
+.ContextMenu .Icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 0.875rem;
+	height: 0.875rem;
+}
+
+.ContextMenu .Icon > svg {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.ContextMenu .ImageIcon {
+	position: absolute;
+	width: 1rem;
+	height: auto;
+	aspect-ratio: 1;
+}
+
+.ContextMenu .ImageIcon div {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.ContextMenu .ImageIcon div > svg {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.ContextMenu .Shortcut {
+	color: var(--foreground-color-1);
+}
+
+.ContextMenu .Dropdown {
+	position: relative;
+}
+
+.ContextMenu .Dropdown .DropdownContent {
+	opacity: 1;
+	position: absolute;
+	top: calc(var(--padding) * -1);
+	left: 100%;
+	padding: var(--padding);
+	border-radius: var(--border-radius-1);
+	border-top-left-radius: 0;
+	background-color: var(--background-color-1);
+	transition: opacity 100ms ease-out;
+	cursor: auto;
+}
+
+.ContextMenu .Dropdown:not(.Active) .DropdownContent {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.ContextMenu .Divider {
+	width: calc(100% - 0.5rem);
+	height: 2px;
+	border-radius: var(--border-radius-99);
+	background-color: var(--foreground-color-2);
+	margin: 0.5rem auto;
+}
+
+.ContextMenu .TextDisplay {
+	margin: 0;
+	padding: 0.25rem 0.5rem;
+	color: var(--foreground-color-1);
+	font-size: 0.875rem;
+	text-align: start;
+	white-space: nowrap;
+}
+
+.Header-menu {
+	display: flex;
+	width: inherit;
+	height: inherit;
+}
+
+.Header-menu .Dropdown {
+	position: relative;
+	display: block;
+	width: auto;
+	height: 100%;
+	padding: 0 0.5rem;
+	background: none;
+	border: none;
+	outline: none;
+	font-size: 0.85rem;
+	cursor: pointer;
+}
+
+.Header-menu .Dropdown:hover, .Header-menu .Dropdown:focus-visible {
+	background-color: rgba(255, 255, 255, 5%);
+}
+
+.Header-menu .Dropdown > .Label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.Header-menu .DropdownArrow {
+	display: none;
+}
+
+.Header-menu .DropdownContent {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 0.35rem;
+	background-color: var(--background-color-1);
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+.Header-menu .Dropdown:not(.Active) .DropdownContent {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.Header-menu .Button {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	background: none;
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-size: 0.85rem;
+	text-align: start;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.Header-menu .Button:hover, .Header-menu .Button:focus-visible {
+	background-color: color-mix(in srgb, var(--background-color-0) 75%, transparent);
+}
+
+.Header-menu .Dropdown > .Label > p, .Header-menu .Button > .Label > p {
+	margin: 0;
+}
+
+.Header-menu .Shortcut {
+	color: var(--foreground-color-1);
+	margin: 0;
+}

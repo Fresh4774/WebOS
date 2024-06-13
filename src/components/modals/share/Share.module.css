@@ -1,0 +1,116 @@
+.Share {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	overflow-y: auto;
+}
+
+.Share > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.Share > div:last-child {
+	gap: 0.5rem;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Title {
+	font-size: 1.5rem;
+}
+
+.Title:first-child {
+	margin-top: 0.5rem;
+}
+
+.Form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.Label {
+	--gap: 0.5rem;
+
+	display: flex;
+	gap: var(--gap);
+	align-items: center;
+	width: 100%;
+}
+
+.Label > p {
+	width: calc(40% - var(--gap));
+	min-width: 40%;
+	text-align: start;
+}
+
+.Input {
+	width: auto;
+	max-width: calc(60% - var(--gap));
+	padding: 0.5rem 1rem;
+	color: var(--text-color);
+	background-color: var(--background-color-1);
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-size: 0.875em;
+}
+
+select.Input > * {
+	color: inherit;
+	background-color: inherit;
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.Input:disabled + div {
+	opacity: 0.5;
+}
+
+.Input[type=checkbox] {
+	display: none;
+}
+
+.Checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.25rem;
+	height: 1.25rem;
+	cursor: pointer;
+}
+
+.Checkbox > svg {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	fill: var(--foreground-color-0);
+}
+
+.Checkbox > svg > * {
+	fill: inherit;
+}
+
+.Url {
+	text-align: start;
+	word-break: break-all;
+}
+
+.Button {
+	--normal-color: var(--background-color-0) !important;
+	--hover-color: var(--background-color-1) !important;
+
+	padding: 0.5rem 1rem;
+	border-radius: var(--border-radius-1);
+	white-space: nowrap;
+}

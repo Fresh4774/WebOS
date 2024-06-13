@@ -1,0 +1,281 @@
+.SettingsContainer {
+	width: 100%;
+	height: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+}
+
+.Settings {
+	--tabs-width: 10rem;
+
+	flex: 1;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background-color-2);
+}
+
+.Tabs {
+	display: flex;
+	gap: 0.25rem;
+	flex-direction: column;
+	min-width: calc(var(--tabs-width) / 2);
+	width: var(--tabs-width);
+	height: 100%;
+	max-width: 50%;
+	padding: 0.5rem;
+	margin: 0;
+	background-color: var(--background-color-2);
+	resize: horizontal;
+	overflow: hidden;
+}
+
+.TabButton {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	width: 100%;
+	min-width: fit-content;
+	padding: 0.75rem;
+	border-radius: var(--border-radius-1);
+	font-size: 0.875rem;
+}
+
+.TabButton.ActiveTab {
+	background-color: var(--background-color-0);
+}
+
+.TabButton:not(.ActiveTab):hover,
+.TabButton:not(.ActiveTab):focus-visible {
+	background-color: color-mix(in srgb, var(--background-color-0) 50%, transparent);
+}
+
+.TabButton > svg {
+	height: 1.35rem;
+	aspect-ratio: 1;
+}
+
+.TabButton > p {
+	margin: 0;
+}
+
+.TabPanel {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	height: 100%;
+	padding: 0.5rem 1rem;
+	background-color: var(--background-color-3);
+	overflow: auto;
+}
+
+.TabPanel:not(.ActivePanel) {
+	display: none;
+}
+
+.Option {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: start;
+	width: 100%;
+	padding-bottom: 1rem;
+}
+
+.OptionList {
+	gap: 0.5rem;
+}
+
+.OptionList .Option {
+	padding-bottom: 0;
+}
+
+.OptionHorizontal {
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Option > .Label {
+	color: var(--foreground-color-0);
+}
+
+.Input {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.Input > label {
+	flex: 1;
+	display: flex;
+}
+
+.ImageSelectContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 0.5rem;
+}
+
+.ImageSelect {
+	display: block;
+	width: 100%;
+}
+
+.ImageSelect > input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.ImageSelect > input:hover + img,
+.ImageSelect > input:focus-visible + img {
+	filter: brightness(110%);
+}
+
+.ImageSelect > input:checked + img {
+	outline: 0.25em solid var(--foreground-color-0);
+}
+
+.ImageSelect > img {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius-1);
+	transition: filter 100ms ease-in-out;
+	cursor: pointer;
+}
+
+.ButtonGroup {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin: 0.75rem 0;
+}
+
+.ButtonGroup .Button {
+	margin-bottom: 0;
+}
+
+.Button {
+	--normal-color: var(--background-color-0) !important;
+	--hover-color: var(--background-color-1) !important;
+
+	margin-bottom: 0.75rem !important;
+	padding: 0.5rem 1rem;
+	border-radius: var(--border-radius-1);
+}
+
+.ButtonDanger {
+	--text-color: var(--black-1) !important;
+	--normal-color: var(--red-0) !important;
+	--hover-color: var(--red-1) !important;
+}
+
+.IconButton {
+	--color: var(--foreground-color-0);
+
+	position: relative;
+	height: 1.25rem;
+	width: auto;
+	padding: 0;
+	background: none;
+	border: none;
+	outline: none;
+	aspect-ratio: 1;
+	cursor: pointer;
+}
+
+.IconButton::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0%);
+	border-radius: var(--border-radius-99);
+	transform: scale(100%);
+	transform-origin: center;
+	transition: all 200ms ease-in-out;
+}
+
+.IconButton:hover::after, .IconButton:focus-visible::after {
+	background-color: rgba(255, 255, 255, 10%);
+	transform: scale(150%);
+}
+
+.IconButton:disabled {
+	--color: var(--foreground-color-2);
+}
+
+.IconButton svg {
+	height: 100%;
+}
+
+.IconButton svg path {
+	fill: var(--color);
+	transition: fill 100ms ease-in-out;
+}
+
+.ProgressBarContainer {
+	width: 100%;
+	max-width: 35rem;
+}
+
+.ProgressBar {
+	width: 100% !important;
+}
+
+.ProgressBarLabels {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.Option > span.Label {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.Icon {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+}
+
+.Icon div {
+	width: inherit;
+	height: inherit;
+}
+
+.Icon div > svg {
+	width: inherit;
+	height: inherit;
+	object-fit: contain;
+}
+
+.Dropdown {
+	width: auto;
+	max-width: calc(60% - var(--gap));
+	padding: 0.5rem 1rem;
+	color: var(--text-color);
+	background-color: var(--background-color-0);
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-size: 0.875em;
+}
+
+.Dropdown > * {
+	color: inherit;
+	background-color: inherit;
+	border: none;
+	border-radius: var(--border-radius-1);
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+}

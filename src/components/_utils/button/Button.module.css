@@ -1,0 +1,25 @@
+.Button {
+	--text-color: var(--foreground-color-0);
+	--normal-color: var(--background-color-0);
+	--hover-color: var(--background-color-1);
+
+	color: var(--text-color);
+	background-color: var(--normal-color);
+	border: none;
+	outline: none;
+	font-size: 0.875em;
+	transition: background-color 100ms ease-in-out;
+	cursor: pointer;
+}
+
+.Button:hover, .Button:focus-visible {
+	background-color: var(--hover-color);
+}
+
+.ButtonLink {
+	text-decoration: none;
+}
+
+.Button > svg {
+	margin-left: 0.5rem;
+}
